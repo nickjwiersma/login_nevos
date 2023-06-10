@@ -8,10 +8,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 #from selenium.webdriver.firefox.service import Service as FirefoxService
 #from webdriver_manager.firefox import GeckoDriverManager
 
-## Selenium 4 MS Edge
-#from selenium.webdriver.edge.service import Service as EdgeService
-#from webdriver_manager.microsoft import EdgeChromiumDriverManager
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -22,12 +18,9 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 ## Set variable for opening Firefox
 #driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
-## Set variable for opening Edge
-#driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
-
 ## Set variables for username and password:
-un = "your_login_credentials"
-pw = "your_password"
+un = "your_email_address"
+pw = "Your_password"
 
 # set waiting times for elements to load before proceeding
 wait = WebDriverWait(driver, 10)
@@ -65,3 +58,6 @@ next_button_locator.click()
 wait.until(EC.presence_of_element_located((By.ID, "my-calendar-link")))
 verify_button_locator = driver.find_element(By.ID, "my-calendar-link")
 verify_button_locator.click()
+
+while True:
+    pass
